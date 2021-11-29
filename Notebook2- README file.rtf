@@ -1,0 +1,41 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 TimesNewRomanPS-BoldMT;\f1\froman\fcharset0 TimesNewRomanPSMT;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc4\levelnfcn4\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{lower-alpha\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 Notebook 2: UNI Transaction Data Preprocessing & Network Analysis - README file 
+\f1\b0 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b \cf0 1. Data Source: 
+\f1\b0 \
+UNI Transaction data is queried from Google Big Query public dataset `bigquery-public-data.crypto_ethereum.token_transfers` \
+\
+
+\f0\b 2. Data access method: 
+\f1\b0 \
+We used Kaggle's public dataset BigQuery integration to query from Google Big Query. Therefore this notebook needs to be run on Kaggle to ensure the data query successful.\
+\
+Sql code:\
+SELECT token_address, from_address, to_address,block_timestamp, cast(value AS NUMERIC) FROM \
+`bigquery-public-data.crypto_ethereum.token_transfers` \
+WHERE token_address = "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984"\
+\
+
+\f0\b 3. Code Description: \
+
+\f1\b0 \
+In this notebook, we mainly:\
+(1) Conduct UNI transaction data preprocessing, which includes dealing with outliers, active/inactive addresses analysis\
+(2) Network analysis, which includes:\
+\pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\pardirnatural\partightenfactor0
+\ls1\ilvl0\cf0 {\listtext	a.	}Network building & Number of daily edges and nodes plotting\
+{\listtext	b.	}Network Visualization\
+{\listtext	c.	}Calculate Network Features for All Transaction Data (all addresses)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 (3) Input variable statistical analysis and plotting }
